@@ -1,13 +1,579 @@
-@import url('http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather');
 @import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+@import url(https://fonts.googleapis.com/css?family=Cardo);
+@import url(https://fonts.googleapis.com/css?family=Cardo:400italic,700,400);
+@import url(https://fonts.googleapis.com/css?family=Cinzel+Decorative);
+@import url(https://fonts.googleapis.com/css?family=Cinzel+Decorative:700,900);
 
-
-h1 {
-  font-size: 2.2rem;
-  color: lighten($orange, 25);
+body {
+	background-color: $color-primary;
 }
 
-.test {
-  font-size: 1.2rem;
-  color: $blue;
+b {
+	font-weight: 700;
+	font-color: $font-color-darker;
 }
+
+.line {
+	width: 150px;
+	height: 1px;
+	background-color: $font-color-standard;
+	margin: 0 auto;
+}
+
+h2 {
+	font-family: $font-primary;
+	font-size: 19px;
+	color:  $font-color-darker;
+	padding: 20px;
+}
+
+p {
+	font-family: $font-secondary;
+	font-size: 16px;
+	color: $font-color-standard;
+	padding: 20px;
+	line-height: 19px;
+}
+
+header {
+
+	width: 100%;
+	height: 100px;
+	overflow: hidden;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background-color: #F5F5F5;
+	z-index: 100;
+
+	@include transition-height(0.3s);
+
+	.container {
+		width: 80%;
+		margin: 30px;
+		padding: 30px;
+	}
+
+	h1#AVF{
+
+		display: inline-block;
+		height: 60px;
+		line-height: 60px;
+		float: left;
+		font-family: $font-primary; 
+		font-size: 19px;
+		color:  $font-color-standard;
+		padding: 20px;
+		text-align: center;
+
+		@include transition-all(0.3s);
+
+	}
+
+	nav {
+
+		display: inline-block;
+		float: right;
+
+		ul {
+			line-height: 60px;
+			margin-left: 20px;
+			color: #cccccc;
+		}
+
+    	li {
+        	display: inline;
+        	float: left;
+        	color:  #cccccc;
+        	font-family: $font-primary;
+        	font-size: 19px;
+    	}
+
+    	li a {
+        	display: block;
+        	color: $font-color-standard;
+        	text-align: center;
+        	padding: 20px;
+        	text-decoration: none;
+
+        	@include transition-all(0.3s);
+    	}
+
+   		a:hover {
+        	background-color: white;
+    	}
+
+
+    	a.navHighlight:link {
+    		background-color: white;
+    	}
+	}
+}
+
+header.small { height: 60px; }
+header.small h1#AVF { height: 60px; line-height: 60px; font-size: 16px; padding-top: 0px; 		
+	padding-bottom: 0px; padding-left: 20px; padding-right: 20px;}
+header.small li { font-size: 16px; padding: 0px;}
+header.small li a { padding-top: 0px; padding-bottom: 0px; padding-left: 20px; 
+	padding-right: 20px;}
+header.small ul { line-height: 60px;}
+
+.PhotoBack {
+
+	height: 300px;
+	width: 100%;
+	background-repeat: none;
+	background-size: cover;
+	background-attachment: fixed;
+	padding-top: 100px;
+
+	.containerWelcome {
+		height: 300px;
+		position: relative;
+	}
+
+	.containerWelcome h1 {
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-right: -50%;
+		-ms-transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+
+    h1 {
+    	color: white;
+    	font-family: $font-primary;
+    	font-size: 64px;
+    	font-style: bold;
+    	display: block;
+    	text-align: center;
+    }
+	
+}
+
+.About {
+
+	height: 180px;
+	background-color: $color-primary;
+	padding-top: 120px;
+	padding-left: 60px;
+	padding-right: 60px;
+	padding-bottom: 60px;
+	margin-top: -60px;
+	-webkit-background-clip: content-box;
+    background-clip: content-box;
+
+	#Bio {
+		float: left;
+		width: 33.333%;
+	}
+
+	#Interests {
+		float: left;
+		width: 33.333%;
+	}
+
+	#Contact {
+		float: left;
+		width: 33.333%;
+	}
+
+	h2, p {
+		text-align: center;
+	}
+
+}
+
+.Artwork {
+
+	height: 600px;
+	background-color:  $color-primary;
+	padding-top: 60px;
+	margin-top: -60px;
+	-webkit-background-clip: content-box;
+    background-clip: content-box;
+    position: relative;
+
+
+.carousel-container {
+	width: 100%;
+	height: 550px;
+	overflow: hidden;
+	position: absolute;
+	bottom: 25px;
+	text-align: center;
+}
+
+.carousel-slides {
+	width: 80%;
+	margin: auto;
+	height: 550px;
+	position: relative;
+	overflow: hidden;
+	float: left;
+
+	img {
+		height: 100%;
+		object-fit: contain;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-right: -50%;
+		-ms-transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+
+		@include fade-in(1s);
+
+	}
+
+
+}
+
+@keyframes fadein {
+	from {opacity:0;}
+	to {opacity: 1;}
+}
+
+@-moz-keyframes fadein {
+	from {opacity:0;}
+	to {opacity: 1;}
+}
+
+@-webkit-keyframes fadein {
+	from {opacity:0;}
+	to {opacity: 1;}
+}
+
+@-o-keyframes fadein {
+	from {opacity:0;}
+	to {opacity: 1;}
+}
+
+
+.imageDisplayed {
+	display: inline-block;
+}
+
+.imageHidden {
+	display: none;
+}
+
+.prevLinkDiv, .nextLinkDiv {
+	width: 10%;
+	height: 550px;
+	float: left;
+	position: relative;
+}
+
+.prevLink, .nextLink {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	-ms-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	padding: 10px;
+
+		i {
+
+			color: $font-color-standard;
+			@include transition-transform(0.3s);
+
+		}
+
+		i:hover {
+			transform: scale(1.2, 1.2);
+        	-ms-transform: scale(1.2, 1.2);
+        	-webkit-transform: scale(1.2, 1.2);
+		}
+}
+
+
+	
+}
+
+.ArtInfo {
+	height: 280px;
+	text-align: center;
+	position: relative;
+
+	.TwoColumn {
+		height: 280px;
+		width: 50%;
+		float: left;
+		position: relative;
+	}
+
+	.button {
+		margin: 40px auto 40px auto;
+		display: block;
+		height: 20px;
+		width: 150px;
+		padding: 20px;
+		border: 2px solid $font-color-standard;
+		border-radius: $default-border-radius;
+
+		color: $font-color-darker;
+		font-family: $font-primary;
+		font-size: 19px;
+		text-decoration: none;
+		text-align: center;
+
+		@include transition-all(0.3s);
+	}
+
+	a.button:hover {
+		background-color: white;
+	}
+
+}
+
+
+.Music {
+	
+	height: 250px;
+	width: 100%;
+	padding-top: 60px;
+	margin-top: -60px;
+	-webkit-background-clip: content-box;
+    background-clip: content-box;
+    position: relative;
+
+    .ContainerMusic {
+    	position: relative;
+    	height: 250px;
+
+    }
+
+    .ContainerMusic h1 {
+    	color: white;
+    	font-family: $font-primary;
+    	font-size: 64px;
+    	font-style: bold;
+    	display: block;
+    	text-align: center;
+    	padding: 60px;
+
+    	position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-right: -50%;
+		-ms-transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+    }
+
+    background-repeat: none;
+	background-size: cover;
+	background-attachment: fixed;
+
+}
+
+.videoBox {
+	position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    bottom: 0;
+    text-align: center;
+    z-index: 1;
+
+    .video {
+    	height: auto;
+    	width: auto;
+    	background-size: cover;
+    	overflow: hidden;
+    	z-index: 1;
+    }
+
+    .overlay {
+    	width: 100%;
+    	z-index: 3;
+
+    	position: absolute;
+    	top: 50%;
+		left: 50%;
+		margin-right: -50%;
+		-ms-transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+
+		a.musicLinks {
+
+			font-family: $font-primary;
+			font-size: 26px;
+			color:  $font-color-darker;
+			padding: 20px;
+			text-decoration: none;
+
+			@include transition-all(0.3s);
+
+		}
+
+		a.musicLinks:hover {
+
+			color: white;
+		}
+
+    }
+}
+
+.hiddenModal {
+	display: none;
+	position: fixed;
+	z-index: 99;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.8);
+	pointer-events: none;
+
+	#modalHeadline {
+		display: inline;
+		float: left;
+	}
+
+	.modalHeader {
+		display: inline-block;
+		height: 50px;
+		border: 1px solid $font-color-standard;
+	}
+
+	.modalContent {
+		z-index: 100;
+		display: block;
+		position: relative;
+		background-color: white;
+		width: 60%;
+		height: 200px;
+		margin: 10% auto;
+		padding: 5px 20px 13px 20px;
+	
+	}
+
+	.modalFooter {
+		height: 20px;
+	}
+
+	
+
+}
+
+.displayedModal {
+
+	display: block;
+	position: fixed;
+	z-index: 99;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.8);
+
+	.modalContent {
+		z-index: 100;
+		display: block;
+		position: relative;
+		background-color: white;
+		width: 50%;
+		margin: 10% auto;	
+	}
+
+	#modalHeadline {
+		display: inline;
+		float: left;
+	}
+
+	.modalHeader {
+		text-align: center;
+		display: inline-block;
+		width: 100%;
+		background-color: $color-primary;
+	}
+
+
+	.close {
+		z-index: 500;
+		display: inline;
+		float: right;
+		text-decoration: none;
+		color: $font-color-darker;
+		font-size: 20px;
+		font-family: $font-primary;
+		padding: 20px;
+	}
+
+	.close:hover,
+	.close:focus {
+		color: white;
+		cursor: pointer;
+	}
+
+}
+
+.Footer {
+
+	width: 100%;
+	height: 100px;
+    background-color: #333333;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    text-align: center;
+
+    .Credits {
+    	color: #f2f2f2;
+    	font-family: $font-secondary;
+    	font-size: 10px;
+    	display: block;
+    	text-align: center;
+    	padding: 5px;
+
+    	a {
+    		color: white;
+    		text-decoration: none;
+    	}
+
+    	a:hover {
+    		color: $font-color-standard;
+    	}
+    }
+
+    i {
+
+    	color: $color-primary;
+    	padding: 20px;
+    	Vertical-align: middle;
+
+    	@include transition-transform(0.3s);
+
+    }
+
+    i:hover {
+        transform: scale(1.2, 1.2);
+        -ms-transform: scale(1.2, 1.2);
+        -webkit-transform: scale(1.2, 1.2);
+    }
+
+    .socialMedia {
+    	width: 33.33%;
+    	position: absolute;
+    	top: 50%;
+		left: 50%;
+		margin-right: -50%;
+		-ms-transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+   	}
+
+}
+
+

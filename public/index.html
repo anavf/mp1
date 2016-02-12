@@ -5,13 +5,166 @@
   <title>MP1 Starter</title>
   <link rel="stylesheet" href="css/styles.css">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <script src="lib/jquery-2.1.3.min/index.js"></script>
+  <script src="js/script.js"></script>
+  <script src="http://localhost:35729/livereload.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="/media/favicon.ico">
 </head>
+
 <body>
-  <h1>Hello World!</h1>
-  <div class="test"> My name is Anthony.</div>
-  <div class="cat">
-    <img src="./media/cat.jpg" alt="Cat">
+  
+
+<header class="big">
+  <div class="HeaderContainer">
+    <a href="#Welcome"><h1 id="AVF">Ana V. Fleming</h1></a>
+    <nav> 
+        <ul>
+            <li><a class="navRegular" id="navAbout" href="#About">about</a></li>
+            <li><a class="navRegular" id="navArtwork" href="#Artwork">artwork</a></li>
+            <li><a class="navRegular" id="navMusic" href="#Music">music</a></li>
+        </ul>
+    </nav>
   </div>
+</header>
+
+
+  <div class="PhotoBack" id="Welcome" style="background-image: url('/media/TheLilyThatSensesSuddenly.NEF-Cropped.jpg')">
+    <div class="containerWelcome">
+      <h1>WELCOME</h1>
+    </div>
+  </div>
+
+
+  <div class="About" id="About">
+    <div id="Bio">
+        <h2>bio</h2>
+        <div class="line"> </div>
+          <p>
+            <b>Artist:</b> Ana V. Fleming <br> <b>Hometown:</b> Peoria, Illinois, USA <br> <b>Education:</b> University of Illinois at Urbana-Champaign <br> 
+          </p>
+    </div>
+
+    <div id="Interests">
+      <h2>interests</h2>
+      <div class="line"> </div>
+        <p>My primary interests include drawing (both on paper and digitally); painting (oils, watercolor, digital); musical composition (for piano, guitar, and orchestral voices); and singing. </p>
+    </div>
+
+    <div id="Contact">
+      <h2>contact</h2>
+      <div class="line"> </div>
+        <p> <b>Email:</b> avflemin@gmail.com <br> <b>Phone:</b> (XXX) XXX-XXXX</p>
+    </div>
+
+  </div>
+
+
+  <div class="Artwork" id="Artwork">
+
+      <div class="carousel-container">
+          <div class="prevLinkDiv">
+          <a class="prevLink" href="#"><i class="fa fa-angle-left fa-5x"></i></a>
+        </div>
+
+          <div class="carousel-slides">
+              <img class="imageDisplayed" src="/media/DSC_0900.NEF.jpg" alt="The Midnight Mooring" />
+              <img class="imageHidden"  src="/media/marked_at_midnight_refined.jpg" 
+                    alt="Marked at Midnight" />
+              <img class="imageHidden"  src="/media/DSC_0731.NEF.jpg" alt="The Lily that Senses, Suddenly" />
+              <img class="imageHidden"  src="/media/DSC_0879.NEF.jpg" alt="The Midnight Mooring" />
+          </div>
+
+          <div class="nextLinkDiv">
+          <a class="nextLink" href="#"><i class="fa fa-angle-right fa-5x"></i></a>
+        </div>
+
+      </div>
+
+  </div>
+
+
+  <div class="ArtInfo" id-"ArtInfo">
+
+      <div class="TwoColumn">
+          <h2>tOOls</h2>
+          <div class="line"> </div>
+            <p>Wacom Intuos Pro Medium | Adobe Photoshop | Logic Pro X</p>
+          <h2>media</h2>
+          <div class="line"> </div>
+            <p>Oil | Digital</p>
+      </div>
+
+      <div class="TwoColumn">
+        <a class="button" href="http://www.inprnt.com/gallery/anovembra/">prints</a>
+        <a class="button" href="http://anovembra.deviantart.com/">deviantart</a>
+      </div>
+
+  </div>
+
+
+<div class="Music" id="Music" style="background-image: url('/media/TheMidnightMooring.NEF-001.jpg')">
+    <div class="ContainerMusic">
+      <h1>MUSiC</h1>
+    </div>
+</div>
+
+
+
+<div class="videoBox">
+      <video class="video" src="/media/AbstractSample.mp4" autoplay loop> </video>
+
+      <div class="overlay">
+          <a class="musicLinks" href="" id="modalButton">about my music</a>
+          <a class="musicLinks" href="https://anavfleming.bandcamp.com/">bandcamp </a>
+          <a class="musicLinks" href="https://soundcloud.com/ana-v-fleming"> soundcloud </a>
+      </div>  
+
+</div>
+
+
+
+<div class="hiddenModal" id="modal">
+
+    <div class="modalContent">
+
+       <div class="modalHeader"> 
+          <h2 id="modalHeadline">about my music</h2>      
+          <a href="" class="close" id="closeModal">x</a>
+        </div>
+
+        <p>The music I compose is predominantly instrumental, often orchestral. Inspired by film scores, I wish to engage the heart, the imagination, and the senses through my compositions. My musical education draws from ten years of formal piano instrucion, a lifetime of singing and a passion for voice, self-guided guitar instruction, an interest in world music/forms/instruments, and a range of musical tastes (everywhere from metal to baroque to folk to ambient). </p>
+
+              <div class="line"> </div>
+
+        <p>In most cases, I compose my songs by playing each part/voice individually on my keyboard, which is connected to my laptop via MIDI connection. Using Logic Pro X, I mix and match different voices and instruments to each of the tracks I've played, adding effects (e.g. reverb), managing levels, recording, and re-recording until I achieve an acceptable sound and quality! All parts are written, improvised, and performed by me on my keyboard (or, in the occassional case that I use my voice, I employ my own vocal cords). </p>
+
+    </div>
+
+
+</div>
+
+
+  <footer class="Footer">
+
+    <div class="FooterMain">
+    <div class="socialMedia">
+
+      <a href="https://www.facebook.com/ana.v.fleming"><i class="fa fa-facebook-official fa-2x"></i></a>
+
+      <a href="http://avflemi2.tumblr.com/"><i class="fa fa-tumblr-square fa-2x"></i></a>
+
+      <a href="https://www.instagram.com/anovembra/"><i class="fa fa-instagram fa-2x"></i></a>
+
+      <div class="Credits">Icons made by DAVE GANDY at <a href="http://fontawesome.io" title="Font Awesome">FONT AWESOME</a>
+      </div>
+
+    </div>
+    <div>
+        
+  </footer>
+
+
 
   <script src="lib/jquery-2.1.3.min/index.js"></script>
   <script src="js/script.js"></script>
