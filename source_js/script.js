@@ -12,17 +12,17 @@ $(document).on("scroll",function() {
 $(document).ready(function() {
 $(".nextLink").on("click", function(e){
 
-      var currentActiveImage = $(".imageDisplayed");
-      var nextActiveImage = currentActiveImage.next();
+      var currentImage = $(".imageDisplayed");
+      var nextImage = currentImage.next();
 
-      if(nextActiveImage.length == 0)
+      if(nextImage.length == 0)
       {
-        nextActiveImage = $(".carousel-slides img").first();
+        nextImage = $(".carousel-slides img").first();
       }
 
-      currentActiveImage.removeClass("imageDisplayed").addClass("imageHidden").css("z-index", -10);
-      nextActiveImage.addClass("imageDisplayed").removeClass("imageHidden").css("z-index", 20);
-      $(".carousel-slides img").not([currentActiveImage, nextActiveImage]).css("z-index", 1);
+      currentImage.removeClass("imageDisplayed").addClass("imageHidden").css("z-index", -10);
+      nextImage.addClass("imageDisplayed").removeClass("imageHidden").css("z-index", 20);
+      $(".carousel-slides img").not([currentImage, nextImage]).css("z-index", 1);
 
       e.preventDefault();
 
@@ -33,17 +33,17 @@ $(".nextLink").on("click", function(e){
 $(document).ready(function() {
 $(".prevLink").on("click", function(e){
 
-      var currentActiveImage = $(".imageDisplayed");
-      var nextActiveImage = currentActiveImage.prev();
+      var currentImage = $(".imageDisplayed");
+      var nextImage = currentImage.prev();
 
-      if(nextActiveImage.length == 0)
+      if(nextImage.length == 0)
       {
-        nextActiveImage = $(".carousel-slides img").last();
+        nextImage = $(".carousel-slides img").last();
       }
 
-      currentActiveImage.removeClass("imageDisplayed").addClass("imageHidden").css("z-index", -10);
-      nextActiveImage.addClass("imageDisplayed").removeClass("imageHidden").css("z-index", 20);
-      $(".carousel-slides img").not([currentActiveImage, nextActiveImage]).css("z-index", 1);
+      currentImage.removeClass("imageDisplayed").addClass("imageHidden").css("z-index", -10);
+      nextImage.addClass("imageDisplayed").removeClass("imageHidden").css("z-index", 20);
+      $(".carousel-slides img").not([currentImage, nextImage]).css("z-index", 1);
 
       e.preventDefault();
 
