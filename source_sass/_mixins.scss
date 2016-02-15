@@ -23,8 +23,8 @@
 }
 
 @mixin fade-in($time) {
-	animation: fadein $time;
-	-moz-animation: fadein $time;
-	-webkit-animation: fadein $time;
-	-o-animation: fadein $time;
+	animation: fade-in $time;
+	-moz-animation: fade-in $time;
+	-webkit-animation: fade-in $time;
+	-o-animation: fade-in $time;
 }

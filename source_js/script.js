@@ -31,7 +31,8 @@ $(".nextLink").on("click", function(e){
 });
 
 $(document).ready(function() {
-$(".prevLink").on("click", function(e){
+
+	$(".prevLink").on("click", function(e){
 
       var currentImage = $(".imageDisplayed");
       var nextImage = currentImage.prev();
@@ -43,6 +44,7 @@ $(".prevLink").on("click", function(e){
 
       currentImage.removeClass("imageDisplayed").addClass("imageHidden").css("z-index", -10);
       nextImage.addClass("imageDisplayed").removeClass("imageHidden").css("z-index", 20);
+
       $(".carousel-slides img").not([currentImage, nextImage]).css("z-index", 1);
 
       e.preventDefault();
@@ -159,6 +161,7 @@ $(document).ready(function() {
 //http://www.w3schools.com/jquery/jquery_animate.asp
 //http://www.paulund.co.uk/smooth-scroll-to-internal-links-with-jquery
 //http://jsfiddle.net/9SDLw/
+//http://api.jquery.com/not/
 //https://www.youtube.com/watch?v=64tNZ8bE4h0
 //https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit
 //http://nicolasgallagher.com/jump-links-and-viewport-positioning/demo/
