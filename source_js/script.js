@@ -60,10 +60,9 @@ $(document).ready(function() {
 
 		e.preventDefault();
 
-		var hash = this.hash;
-		var $hash = $(hash);
-
-		$("html, body").animate({scrollTop: $hash.offset().top}, 800, function(){
+		var hash = $(this.hash);
+		
+		$("html, body").animate({scrollTop: hash.offset().top}, 800, function(){
 			window.location.hash = hash;
 		});
 
